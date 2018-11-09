@@ -1,0 +1,23 @@
+---
+cse:
+  service:
+    registry:
+      address: https://cse.cn-north-1.myhwclouds.com:443 # If type is File then address will be the path of the file
+      scope: full #set full to be able to discover other app's service
+  protocols:
+    rest:
+      listenAddress: 127.0.0.1:9090
+      advertiseAddress: 127.0.0.1:9090
+  handler:
+    chain:
+      Provider:
+        default: tracing-provider,bizkeeper-provider
+  config:
+    client:
+      serverUri: https://cse.cn-north-1.myhwclouds.com:443 #uri of config center
+      refreshMode: 1 # 1: only pull config. 2: watch config change events
+      refreshInterval: 5 # unit is second
+      autodiscovery: false
+  monitor: #Send monitoring data to CSE monitor Server
+    client:
+#      serverUri: https://cse.cn-north-1.myhuaweicloud.com:443   # monitor server url
