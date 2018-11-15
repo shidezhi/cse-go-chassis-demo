@@ -1,7 +1,7 @@
 #!/bin/bash
 # create PATHSRC when it not exist
 
-PATHSRC="src/demo"
+PATHSRC="src/github.com/huaweicse"
 if [ ! -d "$PATHSRC" ]; then
    mkdir -p  $PATHSRC
 fi
@@ -9,11 +9,11 @@ fi
 # move all file and directory to src what name not src
 # test use cp replace mv
 
-mv *[!src]* src/demo
+mv *[!src]*  $PATHSRC
 #cp conf/ Dockerfile  main.go README.md vendor/  src/
 
 cd $PATHSRC/
-mv build.sh ../../
+mv build.sh ../../../
 
 cd build/
 chmod +x build.sh
