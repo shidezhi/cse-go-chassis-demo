@@ -10,14 +10,13 @@ fi
 # move all file and directory to src what name not src
 # test use cp replace mv
 
-cp *[!src]*  $PATHSRC
+mv *[!src]*  $PATHSRC
 #cp conf/ Dockerfile  main.go README.md vendor/  src/
 
-cd $PATHSRC/
+cd $PATHSRC/build/
 
-cd build/
 chmod +x build.sh
 # run build.sh to build
 ./build.sh $1
 
-mv "cse-go-chassis-demo-1.3.1" $PWDPATH
+mv * $PWDPATH
