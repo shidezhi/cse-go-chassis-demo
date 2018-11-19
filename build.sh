@@ -1,7 +1,8 @@
 #!/bin/bash
 # create PATHSRC when it not exist
 
-PWDPATH="$PWD"
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+
 PATHSRC="src/github.com/huaweicse"
 if [ ! -d "$PATHSRC" ]; then
    mkdir -p  $PATHSRC
@@ -19,4 +20,5 @@ chmod +x build.sh
 # run build.sh to build
 ./build.sh $1
 
-mv * $PWDPATH
+cd ../
+mv * $SHELL_FOLDER
